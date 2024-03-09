@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "total": {
+      "type": "integer"
+    },
+    "used": {
+      "type": "integer"
+    },
+    "queued": {
+      "type": "integer"
+    },
+    "pending": {
+      "type": "integer"
+    },
+    "browsers": {
+      "type": "object",
+      "properties": {
+        "chrome": {
+          "type": "object",
+          "properties": {
+            "100.0": {
+              "type": "object"
+            },
+            "120.0": {
+              "type": "object"
+            },
+            "121.0": {
+              "type": "object"
+            },
+            "122.0": {
+              "type": "object"
+            },
+            "99.0": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "100.0",
+            "120.0",
+            "121.0",
+            "122.0",
+            "99.0"
+          ]
+        },
+        "firefox": {
+          "type": "object",
+          "properties": {
+            "122.0": {
+              "type": "object"
+            },
+            "123.0": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "122.0",
+            "123.0"
+          ]
+        },
+        "opera": {
+          "type": "object",
+          "properties": {
+            "106.0": {
+              "type": "object"
+            },
+            "107.0": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "106.0",
+            "107.0"
+          ]
+        }
+      },
+      "required": [
+        "chrome",
+        "firefox",
+        "opera"
+      ]
+    }
+  },
+  "required": [
+    "total",
+    "used",
+    "queued",
+    "pending",
+    "browsers"
+  ]
+}
