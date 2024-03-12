@@ -103,4 +103,24 @@ public class RerResTests extends TestBaseAPI{
                 .statusCode(204)
                 .extract().response();
     }
+
+    @Test
+    void successfulRegisterUserTest() {
+        Response response = given()
+                .log().uri()
+                .log().method()
+                .contentType(JSON)
+                .body("{ \"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\" }")
+                .when()
+                .post("/api/register")
+                .then()
+                .log().status()
+                .log().body()
+                .statusCode(201)
+                .body(matchesJsonSchemaInClasspath("schemas/successful-register-user-schema.json"))
+                .extract().response();
+
+        assertThat(response.path("email"), is("eve.holt@reqres.in"));
+        assertThat(response.path("password"), is("pistol"));
+    }
 }
