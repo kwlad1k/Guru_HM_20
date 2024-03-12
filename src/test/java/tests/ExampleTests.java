@@ -78,7 +78,7 @@ public class ExampleTests {
                 .log().status()
                 .log().body()
                 .statusCode(200)
-                .body("total", is(5))
+                .body("total", is(20))
                 .body("browsers.chrome", hasKey("122.0"));
     }
 
@@ -113,7 +113,7 @@ public class ExampleTests {
                 .extract().response();
 
 //        assertEquals(5, (int) statusResponse.path("total"));
-        assertThat(statusResponse.path("total"),is(5));
+        assertThat(statusResponse.path("total"),is(20));
         assertThat(statusResponse.path("browsers.chrome"),hasKey("122.0"));
     }
 
