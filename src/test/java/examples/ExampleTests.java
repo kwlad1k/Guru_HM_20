@@ -1,4 +1,4 @@
-package tests;
+package examples;
 
 
 import io.restassured.response.Response;
